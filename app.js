@@ -31,13 +31,13 @@ app.post("/api/save-data", async (req, res) => {
     req.headers["x-forwarded-for"] || // 프록시 또는 로드밸런서를 통한 IP
     req.socket.remoteAddress; // 직접 연결된 클라이언트 IP
 
-  console.log(payload, "payload");
-
   // IP 주소를 payload에 추가
   const enrichedPayload = {
     ...payload,
     ip: visitorIp,
   };
+
+  console.log(enrichedPayload);
 
   try {
     // Supabase에 데이터 저장
