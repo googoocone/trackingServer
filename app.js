@@ -10,10 +10,17 @@ const supabase = createClient(
 );
 
 const app = express();
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
 // 데이터 수신 및 저장 엔드포인트
+app.post("/track", (req, res) => {
+  console.log("Tracking data received:", req.body);
+  // 데이터 저장 로직 추가 (DB에 저장하거나 분석 서버로 전달)
+  res.status(200).send("Data received");
+});
+
 app.post("/api/save-data", async (req, res) => {
   const payload = req.body;
   console.log(payload, "payload");
