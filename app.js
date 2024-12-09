@@ -13,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, "public")));
 
 // 데이터 수신 및 저장 엔드포인트
 app.post("/track", (req, res) => {
