@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { createClient } = require("@supabase/supabase-js");
+const path = require("path");
 
 // Supabase 클라이언트 설정
 const supabase = createClient(
