@@ -25,13 +25,25 @@ app.post("/track", (req, res) => {
 
 app.post("/api/save-data", async (req, res) => {
   const payload = req.body;
+
+  // 방문자의 IP 추출
+  const visitorIp =
+    req.headers["x-forwarded-for"] || // 프록시 또는 로드밸런서를 통한 IP
+    req.socket.remoteAddress; // 직접 연결된 클라이언트 IP
+
   console.log(payload, "payload");
+
+  // IP 주소를 payload에 추가
+  const enrichedPayload = {
+    ...payload,
+    ip: visitorIp,
+  };
 
   try {
     // Supabase에 데이터 저장
     const { data, error } = await supabase
       .from("TrackingData")
-      .insert([payload]);
+      .insert([enrichedPayload]); // IP가 추가된 데이터를 저장
     if (error) throw error;
 
     res.status(200).json({ message: "Data saved successfully", data });
