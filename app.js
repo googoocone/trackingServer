@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  res.status(200);
+});
+
 // 데이터 수신 및 저장 엔드포인트
 app.post("/track", (req, res) => {
   console.log("Tracking data received:", req.body);
