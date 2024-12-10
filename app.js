@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.status(200);
+  res.status(200).send("server is running");
 });
 
 // 데이터 수신 및 저장 엔드포인트
