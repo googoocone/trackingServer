@@ -17,6 +17,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
+  console.log("hello world");
   res.status(200).send("server is running");
 });
 
