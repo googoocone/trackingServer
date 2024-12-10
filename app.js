@@ -54,5 +54,5 @@ app.post("/api/save-data", async (req, res) => {
 });
 
 // 서버 실행
-const PORT = 4000;
+const PORT = 443;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
