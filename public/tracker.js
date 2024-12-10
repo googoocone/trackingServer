@@ -1,5 +1,5 @@
 (function () {
-  const SERVER_URL = "http://15.164.131.108:4000/api/save-data"; // 데이터 전송 서버
+  const SERVER_URL = "https://marketflowlab.com/api/save-data"; // 데이터 전송 서버
 
   let sendNumber = 0;
 
