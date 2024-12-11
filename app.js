@@ -15,6 +15,7 @@ const allowedOrigins = [
   "http://52.79.46.16:3000/",
 ];
 
+const app = express();
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -27,8 +28,6 @@ app.use(
     credentials: true,
   })
 );
-
-const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
