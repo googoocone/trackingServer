@@ -109,7 +109,7 @@
   const FixedData = {
     sendNumber,
     event,
-    visitorId,
+    // visitorId,
     device,
     referrer: document.referrer || "Direct", // 직전 URL이 없으면 "Direct"로 처리
     userAgent: navigator.userAgent, // 사용자의 브라우저 정보 추가
