@@ -117,13 +117,13 @@
 
   //서버로 데이터 전송
 
-  setInterval(() => {
-    if (FixedData.sendNumber >= 0) {
-      console.log("저장합니다");
-      FixedData.sendNumber++;
-      sendData();
-    }
-  }, 5000); // 5초 간격
+  // setInterval(() => {
+  //   if (FixedData.sendNumber >= 0) {
+  //     console.log("저장합니다");
+  //     FixedData.sendNumber++;
+  //     sendData();
+  //   }
+  // }, 5000); // 5초 간격
 
   // 데이터 전송
   function sendData() {
