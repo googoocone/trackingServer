@@ -13,7 +13,7 @@ const supabase = createClient(
 const allowedOrigins = [
   "https://marketflowlab.com",
   "http://52.79.46.16:3000",
-  "https://taeyongad2.vercel.app/",
+  "https://taeyongad2.vercel.app",
   "http://localhost:3001",
 ];
 
