@@ -126,6 +126,7 @@
   // }, 5000); // 5초 간격
 
   // 데이터 전송
+  // 데이터 전송
   function sendData() {
     try {
       const payload = {
@@ -133,19 +134,17 @@
         currentTime: Date.now(),
       };
 
-      fetch(SERVER_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((data) => {
-          console.log("Data sent successfully:", data);
-        })
-        .catch((error) => {
-          console.error("Error sending data:", error);
-        });
+      // sendBeacon 사용
+      const blob = new Blob([JSON.stringify(payload)], {
+        type: "application/json",
+      });
+      const sent = navigator.sendBeacon(SERVER_URL, blob);
+
+      if (!sent) {
+        console.error("sendBeacon failed");
+      } else {
+        console.log("Data sent successfully via sendBeacon");
+      }
 
       // Clear FixedData after sending
       FixedData.event.eventType = [];
