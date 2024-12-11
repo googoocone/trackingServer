@@ -3,34 +3,34 @@
 
   let sendNumber = 0;
 
-  // 유틸리티: 쿠키 설정
-  function setCookie(name, value, days) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}`;
-  }
+  // // 유틸리티: 쿠키 설정
+  // function setCookie(name, value, days) {
+  //   const expires = new Date();
+  //   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  //   document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}`;
+  // }
 
-  // 유틸리티: 쿠키 읽기
-  function getCookie(name) {
-    const cookieArr = document.cookie.split("; ");
-    for (let cookie of cookieArr) {
-      const [key, value] = cookie.split("=");
-      if (key === name) return value;
-    }
-    return null;
-  }
+  // // 유틸리티: 쿠키 읽기
+  // function getCookie(name) {
+  //   const cookieArr = document.cookie.split("; ");
+  //   for (let cookie of cookieArr) {
+  //     const [key, value] = cookie.split("=");
+  //     if (key === name) return value;
+  //   }
+  //   return null;
+  // }
 
-  // 방문자 ID, 쿠키 관리
+  // // 방문자 ID, 쿠키 관리
 
-  let visitorId = getCookie("myVisitorId");
-  if (!visitorId) {
-    visitorId = "visitor-" + Math.random().toString(36).substr(2, 9);
-    setCookie("myVisitorId", visitorId, 30); // 30일 유지
-    sessionStorage.setItem("visitorId", visitorId);
-    console.log("New visitor ID:", visitorId);
-  } else {
-    console.log("Returning visitor ID:", visitorId);
-  }
+  // let visitorId = getCookie("myVisitorId");
+  // if (!visitorId) {
+  //   visitorId = "visitor-" + Math.random().toString(36).substr(2, 9);
+  //   setCookie("myVisitorId", visitorId, 30); // 30일 유지
+  //   sessionStorage.setItem("visitorId", visitorId);
+  //   console.log("New visitor ID:", visitorId);
+  // } else {
+  //   console.log("Returning visitor ID:", visitorId);
+  // }
 
   //방문자 기기 추적
 
