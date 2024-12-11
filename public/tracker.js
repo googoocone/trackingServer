@@ -126,13 +126,13 @@
   // }, 5000); // 5초 간격
 
   // 데이터 전송
-  // 데이터 전송
   function sendData() {
     try {
       const payload = {
         ...FixedData,
         currentTime: Date.now(),
       };
+      console.log("hi");
 
       // sendBeacon 사용
       const blob = new Blob([JSON.stringify(payload)], {
@@ -157,6 +157,7 @@
 
   //브라우저 종료 혹은 다른 페이지로 이동시 데이터 전송
   window.addEventListener("beforeunload", () => {
+    console.log(" 데이터 전송");
     sendData(); // 마지막 데이터를 서버로 전송
   });
 
