@@ -10,7 +10,12 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuZ2JpdnNuZWF6bnF5YnptY3NvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM2MzY0MzgsImV4cCI6MjA0OTIxMjQzOH0.INcp9TP3oW0KX0i3SdJ2uCDUr2EQIYwQKuw2mOivwrE" // Supabase 서비스 키 (서버 전용)
 );
 
-const allowedOrigins = ["https://marketflowlab.com", "http://52.79.46.16:3000"];
+const allowedOrigins = [
+  "https://marketflowlab.com",
+  "http://52.79.46.16:3000",
+  "https://taeyongad2.vercel.app/",
+  "http://localhost:3001",
+];
 
 const app = express();
 app.use(
@@ -30,7 +35,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  console.log("hello world");
   res.status(200).send("server is running");
 });
 
